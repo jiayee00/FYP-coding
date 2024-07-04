@@ -39,14 +39,3 @@ MIT License
 ## Citation
 Li X, Ma J, Leng L, Han M, Li M, He F and Zhu Y (2022) MoGCN: A Multi-Omics Integration Method Based on Graph Convolutional Network for Cancer Subtype Analysis. Front. Genet. 13:806842. doi: 10.3389/fgene.2022.806842. <br>
 
-
-
-
-
-
-
-
-```Python
-python SNF.py -p data/fpkm_data.csv data/gistic_data.csv data/rppa_data.csv -m sqeuclidean
-python SVMRFE_run.py -p1 data/fpkm_data.csv -p2 data/gistic_data.csv -p3 data/rppa_data.csv -s 0 
-python GCN_run.py -fd result/latent_data_1300_target.csv -ad result/SNF_fused_matrix.csv -ld data/sample_classes.csv -ts data/test_sample.csv -m 1 -d gpu -p 20
