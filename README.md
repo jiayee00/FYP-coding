@@ -1,8 +1,8 @@
 # MoGCN
 ## What is it?
 MoGCN, a multi-omics integration method based on graph convolutional network.<br>
-![Image text](https://github.com/jiayee00/FYP-coding/blob/main/overall%20workflow.png)
-As shown in figure, inputs to the model are multi-omics expression matrices, including but not limited to genomics, transcriptomics, proteomics, etc. MoGCN exploits the GCN model to incorporate and extend two unsupervised multi-omics integration algorithms: Autoencoder algorithm (AE) based on expression matrix and similarity network fusion algorithm based on patient similarity network. Feature extraction is not necessary before AE and SNF. <br>
+![Image text](https://github.com/jiayee00/FYP-coding/blob/main/overall%20workflow.png) <br>
+As shown in figure, inputs to the model are multi-omics expression matrices, including genomics, transcriptomics, proteomics, etc. MoGCN exploits the GCN model to incorporate and extend two multi-omics integration algorithms: Support vector machine-recursive feature elimination (SVM-RFE) based on feature matrix and similarity network fusion algorithm based on patient similarity network. <br>
 
 ## Requirements 
 MoGCN is a Python scirpt tool, Python environment need:<br>
@@ -13,9 +13,10 @@ snfpy 0.2.2 <br>
 
 ## Usage
 The whole workflow is divided into three steps: <br>
-* Use AE to reduce the dimensionality of multi-omics data to obtain multi-omics feature matrix <br>
+* Use SVM-RFE to reduce the dimensionality of multi-omics data to obtain multi-omics feature matrix <br>
 * Use SNF to construct patient similarity network <br>
 * Input multi-omics feature matrix  and the patient similarity network to GCN <br>
+* Conduct SMOTE before GCN classification <br>
 The sample data is in the data folder, which contains the CNV, mRNA and RPPA data of BRCA. <br>
 ### Command Line Tool
 ```Python
@@ -30,7 +31,7 @@ The meaning of the parameters can be viewed through -h/--help <br>
 * GCN is a semi-supervised classification model, it requires sample label files (.csv format) during training. The first column of the label file is the sample name, the second column is the digitized sample label, the remaining columns are not necessary. <br>
 
 ## Contact
-For any questions please contact Dr. Xiao Li (Email: lixiaoBioinfo@163.com).
+For any questions please contact Lee Jia Yee (Email: mandylee7311@gmail.com).
 
 ## License
 MIT License
