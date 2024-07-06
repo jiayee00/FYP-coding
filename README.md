@@ -20,8 +20,8 @@ The whole workflow is divided into three steps: <br>
 The sample data is in the data folder, which contains the CNV, mRNA and RPPA data of BRCA. <br>
 ### Command Line Tool
 ```Python
-python SVMRFE_run.py -p1 data/fpkm_data.csv -p2 data/gistic_data.csv -p3 data/rppa_data.csv -s 0 
-python SNF.py -p data/fpkm_data.csv data/gistic_data.csv data/rppa_data.csv -m sqeuclidean
+python SVMRFE_run.py -p1 data/transcriptome.csv -p2 data/genome.csv -p3 data/proteome.csv -s 0 
+python SNF.py -p data/transcriptome.csv data/genome.csv data/proteome.csv -m sqeuclidean
 python GCN_run.py -fd result/latent_data_1300_target.csv -ad result/SNF_fused_matrix.csv -ld data/sample_classes.csv -ts data/test_sample.csv -m 1 -d gpu -p 20
 ```
 The meaning of the parameters can be viewed through -h/--help <br>
